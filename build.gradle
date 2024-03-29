@@ -18,8 +18,9 @@ dependencies {
     testImplementation 'com.codeborne:selenide:6.17.2'
 }
 
-test {
+   test {
     useJUnitPlatform()
 
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
 }
